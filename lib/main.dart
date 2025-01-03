@@ -1,11 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'pages/kategori_page.dart';
+import 'pages/favorit_page.dart';
+import 'pages/profil_page.dart';
+import 'widgets/side_menu.dart';
 
 void main() {
   runApp(const ResepMasakanApp());
 }
 
-class ResepMasakanApp extends StatelessWidget {
+class ResepMasakanApp extends StatefulWidget {
   const ResepMasakanApp({Key? key}) : super(key: key);
+
+  @override
+  State<ResepMasakanApp> createState() => _ResepMasakanAppState();
+}
+
+class _ResepMasakanAppState extends State<ResepMasakanApp> {
+  ThemeMode _themeMode = ThemeMode.light;
+
+  void _toggleTheme(bool isDarkMode) {
+    setState(() {
+      _themeMode = isDarkMode ? ThemeMode.dark : ThemeMode.light;
+    });
+  }
+
+  bool get isDarkMode => _themeMode == ThemeMode.dark;
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +34,30 @@ class ResepMasakanApp extends StatelessWidget {
       title: 'Resep Masakan',
       theme: ThemeData(
         primarySwatch: Colors.orange,
+        brightness: Brightness.light,
       ),
-      home: const HomePage(),
+      darkTheme: ThemeData(
+        primarySwatch: Colors.orange,
+        brightness: Brightness.dark,
+      ),
+      themeMode: _themeMode,
+      home: HomePage(
+        toggleTheme: _toggleTheme,
+        isDarkMode: isDarkMode,
+      ),
     );
   }
 }
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final Function(bool) toggleTheme;
+  final bool isDarkMode;
+
+  const HomePage({
+    Key? key,
+    required this.toggleTheme,
+    required this.isDarkMode,
+  }) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -46,9 +82,35 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Resep Masakan'),
+        title: Text(
+          'Resep Masakan',
+          style: GoogleFonts.roboto(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+        backgroundColor: Colors.red.shade900,
+        actions: [
+          IconButton(
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                          title: const Text('Notifikasi'),
+                          content: const Text('Tidak ada notifikasi baru.'),
+                          actions: [
+                            TextButton(
+                              onPressed: () => Navigator.pop(context),
+                              child: const Text('OK'),
+                            ),
+                          ],
+                        ));
+              },
+              icon: Icon(Icons.notifications), color: Colors.white,)
+        ],
       ),
-      drawer: const SideMenu(),
+      drawer: SideMenu(
+        toggleTheme: widget.toggleTheme,
+        isDarkMode: widget.isDarkMode,
+        onItemTapped: _onItemTapped, // Tambahkan fungsi navigasi
+      ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const [
@@ -66,116 +128,13 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
+        selectedItemColor: Colors.orange,
+        unselectedItemColor: Colors.grey,
+        selectedLabelStyle:
+            TextStyle(fontWeight: FontWeight.bold), // Label dipilih lebih tebal
+        unselectedLabelStyle: TextStyle(
+            fontWeight: FontWeight.normal), // Label tidak dipilih normal
         onTap: _onItemTapped,
-      ),
-    );
-  }
-}
-
-class SideMenu extends StatelessWidget {
-  const SideMenu({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          DrawerHeader(
-            decoration: const BoxDecoration(
-              color: Colors.orange,
-            ),
-            child: const Text(
-              'Menu',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-              ),
-            ),
-          ),
-          ExpansionTile(
-            title: const Text('Kategori'),
-            children: [
-              ListTile(
-                title: const Text('Makanan Tradisional'),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text('Makanan Modern'),
-                onTap: () {},
-              ),
-              ListTile(
-                title: const Text('Minuman'),
-                onTap: () {},
-              ),
-            ],
-          ),
-          ListTile(
-            title: const Text('Favorit'),
-            onTap: () {},
-          ),
-          ListTile(
-            title: const Text('Pengaturan'),
-            onTap: () {},
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class KategoriPage extends StatelessWidget {
-  const KategoriPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text(
-            'Kategori Resep',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class FavoritPage extends StatelessWidget {
-  const FavoritPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text(
-            'Resep Favorit',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class ProfilPage extends StatelessWidget {
-  const ProfilPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text(
-            'Profil Pengguna',
-            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          ),
-        ],
       ),
     );
   }
