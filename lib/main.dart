@@ -35,10 +35,12 @@ class _ResepMasakanAppState extends State<ResepMasakanApp> {
       theme: ThemeData(
         primarySwatch: Colors.orange,
         brightness: Brightness.light,
+        textTheme: GoogleFonts.robotoTextTheme(ThemeData.light().textTheme),
       ),
       darkTheme: ThemeData(
         primarySwatch: Colors.orange,
         brightness: Brightness.dark,
+        textTheme: GoogleFonts.robotoTextTheme(ThemeData.dark().textTheme),
       ),
       themeMode: _themeMode,
       home: HomePage(
@@ -66,11 +68,18 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
-    const KategoriPage(),
-    const FavoritPage(),
-    const ProfilPage(),
-  ];
+  final List<Map<String, String>> _favoritList = [];
+  final List<Widget> _pages = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _pages.addAll([
+      const KategoriPage(),
+      FavoritPage(favoritList: _favoritList),
+      const ProfilPage(),
+    ]);
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -84,32 +93,39 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text(
           'Resep Masakan',
-          style: GoogleFonts.roboto(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+          style: GoogleFonts.roboto(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
         ),
         backgroundColor: Colors.red.shade900,
         actions: [
           IconButton(
-              onPressed: () {
-                showDialog(
-                    context: context,
-                    builder: (context) => AlertDialog(
-                          title: const Text('Notifikasi'),
-                          content: const Text('Tidak ada notifikasi baru.'),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.pop(context),
-                              child: const Text('OK'),
-                            ),
-                          ],
-                        ));
-              },
-              icon: Icon(Icons.notifications), color: Colors.white,)
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  title: const Text('Notifikasi'),
+                  content: const Text('Tidak ada notifikasi baru.'),
+                  actions: [
+                    TextButton(
+                      onPressed: () => Navigator.pop(context),
+                      child: const Text('OK'),
+                    ),
+                  ],
+                ),
+              );
+            },
+            icon: const Icon(Icons.notifications),
+            color: Colors.white,
+          ),
         ],
       ),
       drawer: SideMenu(
         toggleTheme: widget.toggleTheme,
         isDarkMode: widget.isDarkMode,
-        onItemTapped: _onItemTapped, // Tambahkan fungsi navigasi
+        onItemTapped: _onItemTapped,
       ),
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -130,10 +146,8 @@ class _HomePageState extends State<HomePage> {
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.orange,
         unselectedItemColor: Colors.grey,
-        selectedLabelStyle:
-            TextStyle(fontWeight: FontWeight.bold), // Label dipilih lebih tebal
-        unselectedLabelStyle: TextStyle(
-            fontWeight: FontWeight.normal), // Label tidak dipilih normal
+        selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+        unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
         onTap: _onItemTapped,
       ),
     );

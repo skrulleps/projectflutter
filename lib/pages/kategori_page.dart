@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'makanan.dart'; // Pastikan Anda mengimpor halaman makanan.dart
+import 'minuman_tradisional.dart'; // Pastikan Anda mengimpor halaman makanan.dart
+import 'jajanan-tradisional.dart'; // Pastikan Anda mengimpor halaman jajanan-tradisional.dart  
 
 class KategoriPage extends StatelessWidget {
+  
   const KategoriPage({Key? key}) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
@@ -19,6 +23,14 @@ class KategoriPage extends StatelessWidget {
       'Sate Ayam',
       'Rendang',
     ];
+
+    // Peta navigasi: nama menu -> widget tujuan
+    final Map<String, Widget> routes = {
+      'Makanan Tradisional': MakananPage(),
+      'Jajanan Tradisional': JajananTradisionalPage(), 
+      'Minuman Tradisional': MinumanTradisionalPage(), 
+      // Tambahkan halaman baru di sini jika diperlukan
+    };
 
     return Scaffold(
       body: SafeArea(
@@ -82,20 +94,13 @@ class KategoriPage extends StatelessWidget {
             const SizedBox(height: 16),
             Expanded(
               child: GridView.count(
-                crossAxisCount: 4, // Ubah menjadi 4 kolom
+                crossAxisCount: 3, // Ubah menjadi 4 kolom
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 padding: const EdgeInsets.all(10.0),
-                children: [
-                  _buildMenuCard(context, 'Makanan Tradisional', Icons.restaurant),
-                  _buildMenuCard(context, 'Jajanan Tradisional', Icons.icecream),
-                  _buildMenuCard(context, 'Minuman Tradisional', Icons.local_drink),
-                  _buildMenuCard(context, 'Resep Favorit', Icons.favorite),
-                  _buildMenuCard(context, 'Menu Baru 1', Icons.coffee),
-                  _buildMenuCard(context, 'Menu Baru 2', Icons.cake),
-                  _buildMenuCard(context, 'Menu Baru 3', Icons.local_pizza),
-                  _buildMenuCard(context, 'Menu Baru 4', Icons.fastfood),
-                ],
+                children: routes.keys.map((title) {
+                  return _buildMenuCard(context, title, routes[title]!);
+                }).toList(),
               ),
             ),
           ],
@@ -104,25 +109,28 @@ class KategoriPage extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuCard(BuildContext context, String title, IconData icon) {
+  Widget _buildMenuCard(BuildContext context, String title, Widget destination) {
+    final Map<String, IconData> icons = {
+      'Makanan Tradisional': Icons.restaurant,
+      'Jajanan Tradisional': Icons.icecream,
+      'Minuman Tradisional': Icons.local_drink,
+      // Tambahkan ikon baru di sini jika diperlukan
+    };
+
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       elevation: 4,
       child: InkWell(
         onTap: () {
-          // Navigasi untuk "Makanan Tradisional"
-          if (title == 'Makanan Tradisional') {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => MakananPage()), // Pastikan MakananPage adalah class di makanan.dart
-            );
-          }
-          // Tambahkan aksi lain untuk menu lainnya jika diperlukan
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => destination),
+          );
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(icon, size: 40, color: Colors.orange),
+            Icon(icons[title] ?? Icons.menu, size: 40, color: Colors.orange),
             const SizedBox(height: 8),
             Text(
               title,

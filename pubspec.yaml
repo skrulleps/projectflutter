@@ -64,6 +64,13 @@ flutter:
     - assets/img/nasi-uduk.jpg
     - assets/img/rendang.jpg
     - assets/img/Sate-ayam.jpg
+    - assets/img/Surabi.jpg
+    - assets/img/Klepon.jpg
+    - assets/img/Putu.jpg
+    - assets/img/wedang_jahe.jpg
+    - assets/img/es_doger.jpg
+    - assets/img/bajigur.jpg
+    - assets/img/profile_picture.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

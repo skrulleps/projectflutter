@@ -1,9 +1,14 @@
-import 'detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'detail_page.dart';
+import 'favorit_page.dart';
 
+class MakananPage extends StatefulWidget {
+  @override
+  _MakananPageState createState() => _MakananPageState();
+}
 
-class MakananPage extends StatelessWidget {
+class _MakananPageState extends State<MakananPage> {
   final List<Map<String, String>> makananList = [
     {
       'name': 'Nasi Uduk',
@@ -25,6 +30,18 @@ class MakananPage extends StatelessWidget {
     },
   ];
 
+  final List<Map<String, String>> favoritList = [];
+
+  void toggleFavorit(Map<String, String> makanan) {
+    setState(() {
+      if (favoritList.contains(makanan)) {
+        favoritList.remove(makanan);
+      } else {
+        favoritList.add(makanan);
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,11 +51,25 @@ class MakananPage extends StatelessWidget {
           style: GoogleFonts.merriweather(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.orange,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.favorite),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => FavoritPage(favoritList: favoritList),
+                ),
+              );
+            },
+          ),
+        ],
       ),
       body: ListView.builder(
         itemCount: makananList.length,
         itemBuilder: (context, index) {
           final makanan = makananList[index];
+          final isFavorit = favoritList.contains(makanan);
           return ListTile(
             leading: ClipRRect(
               borderRadius: BorderRadius.circular(8),
@@ -52,6 +83,13 @@ class MakananPage extends StatelessWidget {
             title: Text(
               makanan['name']!,
               style: GoogleFonts.merriweather(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            trailing: IconButton(
+              icon: Icon(
+                isFavorit ? Icons.favorite : Icons.favorite_border,
+                color: isFavorit ? Colors.red : Colors.grey,
+              ),
+              onPressed: () => toggleFavorit(makanan),
             ),
             onTap: () {
               Navigator.push(
