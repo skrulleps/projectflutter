@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_fonts: ^6.2.1
   carousel_slider: ^5.0.0
+  shared_preferences: ^2.3.5
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,7 @@ flutter:
     - assets/img/es_doger.jpg
     - assets/img/bajigur.jpg
     - assets/img/profile_picture.jpg
+    - assets/img/login_icon.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
