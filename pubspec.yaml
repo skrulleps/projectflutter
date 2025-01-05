@@ -63,16 +63,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
 
-    # - assets/img/nasi-uduk.jpg
-    # - assets/img/rendang.jpg
-    # - assets/img/Sate-ayam.jpg
-    # - assets/img/Surabi.jpg
-    # - assets/img/Klepon.jpg
-    # - assets/img/Putu.jpg
-    # - assets/img/wedang_jahe.jpg
-    # - assets/img/es_doger.jpg
-    # - assets/img/bajigur.jpg
-    # - assets/img/profile_picture.jpg
       - assets/img/kerak_telor.jpg 
       - assets/img/asinan_betawi.jpg 
       - assets/img/ayam_betutu.jpg
