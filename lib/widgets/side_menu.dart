@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projectuas_application_1/pages/makanan.dart';
+import 'package:projectuas_application_1/pages/minuman_tradisional.dart';
+import 'package:projectuas_application_1/pages/jajanan-tradisional.dart';
 
 class SideMenu extends StatelessWidget {
   final Function(bool) toggleTheme;
@@ -35,21 +37,28 @@ class SideMenu extends StatelessWidget {
             title: const Text('Kategori'),
             children: [
               ListTile(
-                title: const Text('Makanan Tradisional'),
+                title: const Text('Makanan Nusantara'),
                 onTap: () {
-                   Navigator.push(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => MakananPage()),
                   );
                 },
               ),
               ListTile(
-                title: const Text('Makanan Modern'),
-                onTap: () {},
+                title: const Text('Minuman Nusantara'),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MinumanTradisionalPage()));
+                },
               ),
               ListTile(
-                title: const Text('Minuman'),
-                onTap: () {},
+                title: const Text('Jajanan Nusantara'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => JajananTradisionalPage()));
+                },
               ),
             ],
           ),
