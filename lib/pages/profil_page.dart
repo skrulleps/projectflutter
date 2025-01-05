@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'login_page.dart'; // Ganti dengan path ke file LoginPage
 
 class ProfilPage extends StatelessWidget {
   const ProfilPage({Key? key}) : super(key: key);
+
+  Future<void> _logout(BuildContext context) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove('isLoggedIn'); // Hapus status login
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const LoginPage()),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +51,10 @@ class ProfilPage extends StatelessWidget {
               icon: Icons.person,
               title: 'Edit Profil',
               onTap: () {
-                // Tambahkan aksi untuk menu ini
+                // Aksi untuk Edit Profil
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Edit Profil Belum Tersedia')),
+                );
               },
               textColor: textColor,
             ),
@@ -48,7 +62,10 @@ class ProfilPage extends StatelessWidget {
               icon: Icons.lock,
               title: 'Ganti Kata Sandi',
               onTap: () {
-                // Tambahkan aksi untuk menu ini
+                // Aksi untuk Ganti Kata Sandi
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Ganti Kata Sandi Belum Tersedia')),
+                );
               },
               textColor: textColor,
             ),
@@ -56,7 +73,10 @@ class ProfilPage extends StatelessWidget {
               icon: Icons.notifications,
               title: 'Notifikasi',
               onTap: () {
-                // Tambahkan aksi untuk menu ini
+                // Aksi untuk Notifikasi
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Pengaturan Notifikasi Belum Tersedia')),
+                );
               },
               textColor: textColor,
             ),
@@ -64,7 +84,10 @@ class ProfilPage extends StatelessWidget {
               icon: Icons.language,
               title: 'Bahasa',
               onTap: () {
-                // Tambahkan aksi untuk menu ini
+                // Aksi untuk Bahasa
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Pengaturan Bahasa Belum Tersedia')),
+                );
               },
               textColor: textColor,
             ),
@@ -72,7 +95,10 @@ class ProfilPage extends StatelessWidget {
               icon: Icons.settings,
               title: 'Pengaturan',
               onTap: () {
-                // Tambahkan aksi untuk menu ini
+                // Aksi untuk Pengaturan
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Pengaturan Belum Tersedia')),
+                );
               },
               textColor: textColor,
             ),
@@ -80,7 +106,10 @@ class ProfilPage extends StatelessWidget {
               icon: Icons.help_outline,
               title: 'Bantuan',
               onTap: () {
-                // Tambahkan aksi untuk menu ini
+                // Aksi untuk Bantuan
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text('Bantuan Belum Tersedia')),
+                );
               },
               textColor: textColor,
             ),
@@ -91,7 +120,7 @@ class ProfilPage extends StatelessWidget {
               icon: Icons.logout,
               title: 'Keluar',
               onTap: () {
-                // Tambahkan aksi untuk keluar
+                _logout(context); // Logout pengguna
               },
               textColor: Colors.red,
             ),
