@@ -10,7 +10,7 @@ void main() {
 }
 
 class ResepMasakanApp extends StatefulWidget {
-  const ResepMasakanApp({Key? key}) : super(key: key);
+  const ResepMasakanApp({super.key});
 
   @override
   State<ResepMasakanApp> createState() => _ResepMasakanAppState();
@@ -56,10 +56,10 @@ class HomePage extends StatefulWidget {
   final bool isDarkMode;
 
   const HomePage({
-    Key? key,
+    super.key,
     required this.toggleTheme,
     required this.isDarkMode,
-  }) : super(key: key);
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
