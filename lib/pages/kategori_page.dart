@@ -13,15 +13,15 @@ class KategoriPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> imagePaths = [
-      'assets/img/nasi-uduk.jpg',
-      'assets/img/Sate-ayam.jpg',
-      'assets/img/rendang.jpg',
+      'assets/img/soto_banjar.jpg',
+      'assets/img/bajigur.jpg',
+      'assets/img/geplak.jpg',
     ];
 
     final List<String> captions = [
-      'Nasi Uduk',
-      'Sate Ayam',
-      'Rendang',
+      'Soto Banjar',
+      'Bajigur',
+      'Geplak',
     ];
 
     // Peta navigasi: nama menu -> widget tujuan
