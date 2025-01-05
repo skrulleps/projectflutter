@@ -63,49 +63,65 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
 
-    # - assets/img/nasi-uduk.jpg
-    # - assets/img/rendang.jpg
-    # - assets/img/Sate-ayam.jpg
-    # - assets/img/Surabi.jpg
-    # - assets/img/Klepon.jpg
-    # - assets/img/Putu.jpg
-    # - assets/img/wedang_jahe.jpg
-    # - assets/img/es_doger.jpg
-    # - assets/img/bajigur.jpg
-    # - assets/img/profile_picture.jpg
-      - assets/img/kerak_telor.jpg 
-      - assets/img/asinan_betawi.jpg 
-      - assets/img/ayam_betutu.jpg
-      - assets/img/ayamtangkap.jpeg 
-      - assets/img/bajigur.jpg 
-      - assets/img/batagor.jpg 
-      - assets/img/coto_makassar.jpg 
-      - assets/img/dendeng_balado.jpg 
-      - assets/img/es_doger.jpg 
-      - assets/img/ikan_kuah_kuning.jpg
-      - assets/img/Putu.jpg 
-      - assets/img/Klepon.jpg 
-      - assets/img/lawar.jpg 
-      - assets/img/mie_aceh.jpeg 
-      - assets/img/nasi_liwet_solo.jpg 
-      - assets/img/nasi_timbel.jpg 
-      - assets/img/nasi-uduk.jpg 
-      - assets/img/papeda.jpg 
-      - assets/img/pliek-u.jpg 
-      - assets/img/profile_picture.jpg
-      - assets/img/wedang_jahe.jpg 
-      - assets/img/rawon.jpg 
-      - assets/img/rendang.jpg 
-      - assets/img/rujak_cingur.jpg 
-      - assets/img/sate_lilit.jpg 
-      - assets/img/sate_padang.jpg 
-      - assets/img/Sate-ayam.jpg 
-      - assets/img/seblak.jpg 
-      - assets/img/sop konro.jpg 
-      - assets/img/soto betawi.jpg 
-      - assets/img/soto_banjar.jpg 
-      - assets/img/Surabi.jpg
-      - assets/img/login_icon.png
+    - assets/img/air_guraka.jpg 
+    - assets/img/bajigur.jpg 
+    - assets/img/bandrek.jpg 
+    - assets/img/bir_pletok.jpg 
+    - assets/img/dawet_ayu.jpg 
+    - assets/img/es_daluman.jpg 
+    - assets/img/es_doger.jpg 
+    - assets/img/es_pisang_ijo.jpg 
+    - assets/img/es_selendang_mayang.jpg 
+    - assets/img/es_sinom.jpg 
+    - assets/img/Klepon.jpg 
+    - assets/img/kopi_sanger.jpg 
+    - assets/img/nasi-uduk.jpg 
+    - assets/img/profile_picture.jpg 
+    - assets/img/Putu.jpg 
+    - assets/img/rendang.jpg 
+    - assets/img/sarabba.jpg 
+    - assets/img/Sate-ayam.jpg 
+    - assets/img/Surabi.jpg 
+    - assets/img/teh_talua.jpg 
+    - assets/img/teh_tarik_aceh.jpg 
+    - assets/img/wedang_jahe.jpg 
+    - assets/img/wedang_pokak.jpg 
+    - assets/img/wedang_ronde.jpg 
+    - assets/img/aia_kawa.jpg
+    - assets/img/kerak_telor.jpg 
+    - assets/img/asinan_betawi.jpg 
+    - assets/img/ayam_betutu.jpg
+    - assets/img/ayamtangkap.jpeg 
+    - assets/img/bajigur.jpg 
+    - assets/img/batagor.jpg 
+    - assets/img/coto_makassar.jpg 
+    - assets/img/dendeng_balado.jpg 
+    - assets/img/es_doger.jpg 
+    - assets/img/ikan_kuah_kuning.jpg
+    - assets/img/Putu.jpg 
+    - assets/img/Klepon.jpg 
+    - assets/img/lawar.jpg 
+    - assets/img/mie_aceh.jpeg 
+    - assets/img/nasi_liwet_solo.jpg 
+    - assets/img/nasi_timbel.jpg 
+    - assets/img/nasi-uduk.jpg 
+    - assets/img/papeda.jpg 
+    - assets/img/pliek-u.jpg 
+    - assets/img/profile_picture.jpg
+    - assets/img/wedang_jahe.jpg 
+    - assets/img/rawon.jpg 
+    - assets/img/rendang.jpg 
+    - assets/img/rujak_cingur.jpg 
+    - assets/img/sate_lilit.jpg 
+    - assets/img/sate_padang.jpg 
+    - assets/img/Sate-ayam.jpg 
+    - assets/img/seblak.jpg 
+    - assets/img/sop konro.jpg 
+    - assets/img/soto betawi.jpg 
+    - assets/img/soto_banjar.jpg 
+    - assets/img/Surabi.jpg
+    - assets/img/login_icon.png
+
 
   #   - images/a_dot_ham.jpeg
 
