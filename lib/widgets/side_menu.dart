@@ -34,6 +34,7 @@ class SideMenu extends StatelessWidget {
             ),
           ),
           ExpansionTile(
+            leading: const Icon(Icons.category),
             title: const Text('Kategori'),
             children: [
               ListTile(
@@ -66,6 +67,7 @@ class SideMenu extends StatelessWidget {
             ],
           ),
           ListTile(
+            leading: const Icon(Icons.favorite),
             title: const Text('Favorit'),
             onTap: () {
               onItemTapped(1); // Pilih halaman 'Favorit'
@@ -73,7 +75,8 @@ class SideMenu extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Profil'),
+            leading: const Icon(Icons.settings),
+            title: const Text('Pengaturan'),
             onTap: () {
               onItemTapped(2); // Pilih halaman 'Profil'
               Navigator.pop(context); // Tutup menu samping
