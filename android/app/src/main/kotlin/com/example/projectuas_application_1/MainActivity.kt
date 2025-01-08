@@ -1,4 +1,4 @@
-package com.example.projectuas_application_1
+package com.resepnusantara.global
 
 import io.flutter.embedding.android.FlutterActivity
 
