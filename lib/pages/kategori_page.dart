@@ -3,12 +3,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'makanan.dart'; // Pastikan Anda mengimpor halaman makanan.dart
 import 'minuman_tradisional.dart'; // Pastikan Anda mengimpor halaman makanan.dart
-import 'jajanan-tradisional.dart'; // Pastikan Anda mengimpor halaman jajanan-tradisional.dart  
+import 'jajanan-tradisional.dart'; // Pastikan Anda mengimpor halaman jajanan-tradisional.dart
 
 class KategoriPage extends StatelessWidget {
-  
   const KategoriPage({Key? key}) : super(key: key);
-  
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +25,8 @@ class KategoriPage extends StatelessWidget {
     // Peta navigasi: nama menu -> widget tujuan
     final Map<String, Widget> routes = {
       'Makanan Tradisional': MakananPage(),
-      'Jajanan Tradisional': JajananTradisionalPage(), 
-      'Minuman Tradisional': MinumanTradisionalPage(), 
+      'Jajanan Tradisional': JajananTradisionalPage(),
+      'Minuman Tradisional': MinumanTradisionalPage(),
       // Tambahkan halaman baru di sini jika diperlukan
     };
 
@@ -79,7 +77,8 @@ class KategoriPage extends StatelessWidget {
                 );
               },
               options: CarouselOptions(
-                height: 220, // Tambahkan ruang agar carousel tidak melebihi batas
+                height:
+                    220, // Tambahkan ruang agar carousel tidak melebihi batas
                 viewportFraction: 0.8,
                 initialPage: 0,
                 enableInfiniteScroll: true,
@@ -109,7 +108,8 @@ class KategoriPage extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuCard(BuildContext context, String title, Widget destination) {
+  Widget _buildMenuCard(
+      BuildContext context, String title, Widget destination) {
     final Map<String, IconData> icons = {
       'Makanan Tradisional': Icons.restaurant,
       'Jajanan Tradisional': Icons.icecream,
