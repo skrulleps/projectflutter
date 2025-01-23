@@ -36,43 +36,43 @@ Aplikasi Resep Nusantara adalah platform yang dirancang untuk memperkenalkan dan
 5. **Application View**
    - Logo Icon
 
-     ![Application View]()
+     ![Application View](SC-Image/Logo.jpg)
      
    - Login
 
-     ![Application View]()
+     ![Application View](SC-Image/LoginPage.jpg)
      
    - Landing Page (Light Mode)
 
-     ![Application View]()
+     ![Application View](SC-Image/LandingPage.jpg)
      
    - Landing Page (Dark Mode)
 
-     ![Application View]()
+     ![Application View](SC-Image/DarkMode.jpg)
      
    - Favorit Page
 
-     ![Application View]()
+     ![Application View](SC-Image/FavoritPage.jpg)
      
    - Profile Page
 
-     ![Application View]()
+     ![Application View](SC-Image/ProfilePage.jpg)
      
    - Side Menu
 
-     ![Application View]()
+     ![Application View](SC-Image/SideMenu.jpg)
      
    - Food Menu
 
-     ![Application View]()
+     ![Application View](SC-Image/Food.jpg)
      
    - Drink Menu
 
-     ![Application View]()
+     ![Application View](SC-Image/Drink.jpg)
      
    - Snack Menu
 
-     ![Application View]()
+     ![Application View](SC-Image/Snack.jpg)
      
 
 ## Kontribusi
