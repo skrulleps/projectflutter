@@ -1,16 +1,88 @@
-# projectuas_application_1
+# Campus Semester's Project
 
-A new Flutter project.
+A new Flutter project (just Frontend).
 
-## Getting Started
+Aplikasi Resep Nusantara adalah platform yang dirancang untuk memperkenalkan dan mempermudah akses ke berbagai resep masakan khas Indonesia. Aplikasi ini bertujuan untuk melestarikan kekayaan kuliner Nusantara dengan menyediakan panduan memasak yang mudah dipahami.
 
-This project is a starting point for a Flutter application.
+## Fitur Utama
+- **Katalog Resep**: Menampilkan berbagai resep masakan Indonesia yang lengkap dengan bahan dan langkah-langkah.
+- **Pencarian Resep**: Pengguna dapat mencari resep berdasarkan nama masakan atau bahan utama.
+- **Favorit**: Simpan resep favorit Anda untuk akses cepat di kemudian hari.
+- **Interaktif**: Tersedia fitur komentar dan rating untuk setiap resep.
 
-A few resources to get you started if this is your first Flutter project:
+## Teknologi yang Digunakan
+- **Frontend**: Flutter untuk antarmuka pengguna yang modern dan responsif.
+- **Backend**: Firebase untuk autentikasi pengguna dan penyimpanan data resep.
+- **Database**: Cloud Firestore untuk pengelolaan data secara real-time.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Instalasi
+1. **Clone Repository**
+   ```bash
+   git clone https://github.com/username/resep-nusantara.git
+   ```
+2. **Install Dependencies**
+   ```bash
+   flutter pub get
+   ```
+3. **Konfigurasi Firebase**
+   - Tambahkan file `google-services.json` (untuk Android) dan `GoogleService-Info.plist` (untuk iOS) ke proyek Anda.
+   - Ikuti panduan integrasi Firebase di [dokumentasi Firebase](https://firebase.google.com/docs/flutter/setup).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. **Jalankan Aplikasi**
+   ```bash
+   flutter run
+   ```
+
+5. **Application View**
+   - Logo Icon
+
+     ![Application View]()
+     
+   - Login
+
+     ![Application View]()
+     
+   - Landing Page (Light Mode)
+
+     ![Application View]()
+     
+   - Landing Page (Dark Mode)
+
+     ![Application View]()
+     
+   - Favorit Page
+
+     ![Application View]()
+     
+   - Profile Page
+
+     ![Application View]()
+     
+   - Side Menu
+
+     ![Application View]()
+     
+   - Food Menu
+
+     ![Application View]()
+     
+   - Drink Menu
+
+     ![Application View]()
+     
+   - Snack Menu
+
+     ![Application View]()
+     
+
+## Kontribusi
+Proyek ini dikembangkan oleh:
+
+- **Mochamed Fadhlan Tuhairi** (GitHub: [skrulleps](https://github.com/skrulleps)) - Main Dev.
+- **Zidane Fauzan Saputra** (GitHub: [zidanefzns](https://github.com/zidanefzns)) - Feature Dev.
+- **Irsyadul Asyrof** (GitHub: [irsydlasyrf](https://github.com/irsydlasyrf)) - Feature Dev.
+
+Kami membuka kesempatan bagi siapa saja yang ingin berkontribusi. Silakan buat pull request atau hubungi kami untuk diskusi lebih lanjut.
+
+## Dokumentasi
+Untuk informasi lebih lanjut tentang pengembangan Flutter, lihat [dokumentasi Flutter online](https://docs.flutter.dev/).
